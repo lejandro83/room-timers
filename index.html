@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Villas de Eros</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <script type="text/javascript" src="./js/script.js" defer></script>
+</head>
+<body onload="loadSite()">
+    <h1>Villas de Eros</h1>
+    <h3>Busca la habitación y dale comenzar.</h3>
+    <div id="controls">
+      <input class="timerInput" type="text" name="search" placeholder="Numero de habitación" id="searchInput">
+      <button class="timerButton" style="width:150px;" onclick="searchRoom()">Buscar</button>
+      <button class="timerButton" style="width:150px;" onclick="showAll()">Ver todos</button>
+      <!-- <h2>Timers</h2>
+      <button class="timerButton" style="width:150px ;" onclick="newTimer(prompt('How many seconds?'))">+ New Timer</button> -->
+      <!-- <h2>Stop Audio</h2>
+      <button class="timerButton" style="width:150px ;" onclick="stopAlert()">Stop Music</button> -->
+    </div>
+    <div id="timerContainer"></div>
+</body>
+
+<script type="text/javascript">
+    window.onbeforeunload = function() {
+        return "PELIGRO, los tiempos de las habitaciones se perderan!";
+    }
+</script>
+</html>
