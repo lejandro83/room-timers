@@ -1,4 +1,5 @@
-var audio = new Audio('assets/audio.wav');
+var audio = new Audio("https://d9olupt5igjta.cloudfront.net/samples/sample_files/74375/08d829319d3c03251388ac75d8b6183431e6d635/mp3/_RedAlert.mp3");
+//var audio =  new Audio('assets/audio.wav');
 
 var timers_list = [
     {id: "timer-1", time: 1, status:"stop", original: 1},
