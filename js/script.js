@@ -1,8 +1,9 @@
 var audio = new Audio("https://d9olupt5igjta.cloudfront.net/samples/sample_files/74375/08d829319d3c03251388ac75d8b6183431e6d635/mp3/_RedAlert.mp3");
 //var audio =  new Audio('assets/audio.wav');
+// https://d9olupt5igjta.cloudfront.net/samples/sample_files/9003/c09a13629559edf3f81c314eb7fdbf7171a3f732/mp3/54048-alarms.wav.mp3
 
 var timers_list = [
-    {id: "timer-1", time: 1, status:"stop", original: 1},
+    {id: "timer-1", time: 14400, status:"stop", original: 14400},
     {id: "timer-2", time: 14400, status:"stop", original: 14400},
     {id: "timer-3", time: 14400, status:"stop", original: 14400},
     {id: "timer-4", time: 14400, status:"stop", original: 14400},
@@ -14,18 +15,19 @@ var timers_list = [
     {id: "timer-10", time: 14400, status:"stop", original: 14400},
     {id: "timer-11", time: 14400, status:"stop", original: 14400},
     {id: "timer-12", time: 14400, status:"stop", original: 14400},
-    {id: "timer-13", time: 14400, status:"stop", original: 14400},
     {id: "timer-14", time: 14400, status:"stop", original: 14400},
     {id: "timer-15", time: 14400, status:"stop", original: 14400},
     {id: "timer-16", time: 14400, status:"stop", original: 14400},
     {id: "timer-17", time: 14400, status:"stop", original: 14400},
-    {id: "timer-18", time: 14400, status:"stop", original: 14400},
     {id: "timer-19", time: 14400, status:"stop", original: 14400},
     {id: "timer-20", time: 14400, status:"stop", original: 14400},
     {id: "timer-21", time: 14400, status:"stop", original: 14400},
     {id: "timer-22", time: 14400, status:"stop", original: 14400},
     {id: "timer-23", time: 14400, status:"stop", original: 14400},
     {id: "timer-24", time: 14400, status:"stop", original: 14400},
+    {id: "timer-35", time: 14400, status:"stop", original: 14400},
+    {id: "timer-36", time: 14400, status:"stop", original: 14400},
+    
   ];
    
   function loadSite (){  
