@@ -3,31 +3,30 @@ var audio = new Audio("https://d9olupt5igjta.cloudfront.net/samples/sample_files
 // https://d9olupt5igjta.cloudfront.net/samples/sample_files/9003/c09a13629559edf3f81c314eb7fdbf7171a3f732/mp3/54048-alarms.wav.mp3
 
 var timers_list = [
-    {id: "timer-1", time: 14400, status:"stop", original: 14400},
-    {id: "timer-2", time: 14400, status:"stop", original: 14400},
-    {id: "timer-3", time: 14400, status:"stop", original: 14400},
-    {id: "timer-4", time: 14400, status:"stop", original: 14400},
-    {id: "timer-5", time: 14400, status:"stop", original: 14400},
-    {id: "timer-6", time: 14400, status:"stop", original: 14400},
-    {id: "timer-7", time: 14400, status:"stop", original: 14400},
-    {id: "timer-8", time: 14400, status:"stop", original: 14400},
-    {id: "timer-9", time: 14400, status:"stop", original: 14400},
-    {id: "timer-10", time: 14400, status:"stop", original: 14400},
-    {id: "timer-11", time: 14400, status:"stop", original: 14400},
-    {id: "timer-12", time: 14400, status:"stop", original: 14400},
-    {id: "timer-14", time: 14400, status:"stop", original: 14400},
-    {id: "timer-15", time: 14400, status:"stop", original: 14400},
-    {id: "timer-16", time: 14400, status:"stop", original: 14400},
-    {id: "timer-17", time: 14400, status:"stop", original: 14400},
-    {id: "timer-19", time: 14400, status:"stop", original: 14400},
-    {id: "timer-20", time: 14400, status:"stop", original: 14400},
-    {id: "timer-21", time: 14400, status:"stop", original: 14400},
-    {id: "timer-22", time: 14400, status:"stop", original: 14400},
-    {id: "timer-23", time: 14400, status:"stop", original: 14400},
-    {id: "timer-24", time: 14400, status:"stop", original: 14400},
-    {id: "timer-35", time: 14400, status:"stop", original: 14400},
-    {id: "timer-36", time: 14400, status:"stop", original: 14400},
-    
+    {id: "timer-1", room_num: "1", time: 14400, status: "stop", original: 14400},
+    {id: "timer-2", room_num: "2", time: 14400, status: "stop", original: 14400},
+    {id: "timer-3", room_num: "3", time: 14400, status: "stop", original: 14400},
+    {id: "timer-4", room_num: "4", time: 14400, status: "stop", original: 14400},
+    {id: "timer-5", room_num: "5", time: 14400, status: "stop", original: 14400},
+    {id: "timer-6", room_num: "6", time: 14400, status: "stop", original: 14400},
+    {id: "timer-7", room_num: "7", time: 14400, status: "stop", original: 14400},
+    {id: "timer-8", room_num: "8", time: 14400, status: "stop", original: 14400},
+    {id: "timer-9", room_num: "9", time: 14400, status: "stop", original: 14400},
+    {id: "timer-10", room_num: "10", time: 14400, status: "stop", original: 14400},
+    {id: "timer-11", room_num: "11", time: 14400, status: "stop", original: 14400},
+    {id: "timer-12", room_num: "12", time: 14400, status: "stop", original: 14400},
+    {id: "timer-13", room_num: "14", time: 14400, status: "stop", original: 14400},
+    {id: "timer-14", room_num: "15", time: 14400, status: "stop", original: 14400},
+    {id: "timer-15", room_num: "16", time: 14400, status: "stop", original: 14400},
+    {id: "timer-16", room_num: "17", time: 14400, status: "stop", original: 14400},
+    {id: "timer-17", room_num: "18", time: 14400, status: "stop", original: 14400},
+    {id: "timer-18", room_num: "19", time: 14400, status: "stop", original: 14400},
+    {id: "timer-19", room_num: "20", time: 14400, status: "stop", original: 14400},
+    {id: "timer-20", room_num: "21", time: 14400, status: "stop", original: 14400},
+    {id: "timer-21", room_num: "22", time: 14400, status: "stop", original: 14400},
+    {id: "timer-22", room_num: "23", time: 14400, status: "stop", original: 14400},
+    {id: "timer-23", room_num: "34", time: 14400, status: "stop", original: 14400},
+    {id: "timer-24", room_num: "35", time: 14400, status: "stop", original: 14400},
   ];
    
   function loadSite (){  
@@ -36,7 +35,7 @@ var timers_list = [
       text += `
       <div class="timer" id="div-timer-${i+1}">
         <div class="innerContainer">
-          <h4>Habitación ${i+1}</h4>
+          <h4 id="room-${timers_list[i].room_num}">Habitación ${timers_list[i].room_num}</h4>
           <div class="timer-display">
             <span id="timer-${i+1}"></span>
           </div>
@@ -65,10 +64,10 @@ var timers_list = [
     timers_list[i].time = timers_list[i].original;
   }
    
-  function newTimer(time){
-    timers_list.push({id: "timer-" + (timers_list.length + 1), time: time, status:"stop", original:time});
-    loadSite();
-  }
+  // function newTimer(time){
+  //   timers_list.push({id: "timer-" + (timers_list.length + 1), time: time, status:"stop", original:time});
+  //   loadSite();
+  // }
 
   function hideAll(){
     for (let i = 0; i<timers_list.length; i++){
@@ -80,17 +79,16 @@ var timers_list = [
   function showAll(){
     for (let i = 0; i<timers_list.length; i++){
       document.getElementById(`div-timer-${i+1}`).style = "timerButton";
-
+      document.getElementById("searchInput").value = ''
     }
   }
 
   function searchRoom(){
     // alert('aqui')
     var room = document.getElementById("searchInput").value
-    console.log(room)
     if(!isNaN(room)){
           hideAll()
-          document.getElementById(`div-timer-${room}`).style = "timerButton";
+          document.getElementById(`room-${room}`).parentElement.parentElement.style = "timerButton";
         }
   }
 
@@ -112,7 +110,7 @@ var timers_list = [
       if (timers_list[i].time == 0 && timers_list[i].status == "running"){
         timers_list[i].status = "stop";
         audio.play();
-        alert(`Se acabo el tiempo de la Habitación ${i+1}!`);
+        alert(`Se acabo el tiempo de la Habitación ${timers_list[i].room_num}!`);
         timers_list[i].time = timers_list[i].original;
       }
        
